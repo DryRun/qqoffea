@@ -6,8 +6,9 @@ else
 fi
 
 python -m venv --copies venv
+# Put local packages ahead of system
+echo -e "\nexport PYTHONPATH=$PWD/venv/lib/python3.6/site-packages:$PWD:$PYTHONPATH\n" >> venv/bin/activate
 source venv/bin/activate
-#python -m pip install setuptools pip --upgrade
-#python -m pip install coffea
-#python -m pip install xxhash
+python -m pip install setuptools pip --upgrade
 pip install --editable . 
+
