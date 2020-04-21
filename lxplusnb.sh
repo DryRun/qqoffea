@@ -1,2 +1,3 @@
 #!/bin/bash
-ssh -N -L localhost:7778:localhost:7778 dryu@lxplus.cern.ch
+echo "Tunneling to ${1}, port ${2}"
+ssh -v -N -L localhost:${2}:localhost:${2} dryu@lxplus${1}.cern.ch
